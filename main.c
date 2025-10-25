@@ -168,3 +168,21 @@ printf("Select vehicle:\n");
     printf("Estimated Time: %.2f hrs\n", time);
 }
 
+void showReports() {
+    if (deliveryCount == 0) {
+        printf("No deliveries made yet.\n");
+        return;
+    }
+
+    float totalRevenue = 0, totalProfit = 0, totalTime = 0, totalDistance = 0;
+    float shortest = 1e9, longest = 0;
+
+    for (int i = 0; i < deliveryCount; i++) {
+        totalRevenue += deliveries[i].customerCharge;
+        totalProfit += deliveries[i].profit;
+        totalTime += deliveries[i].time;
+        totalDistance += deliveries[i].distance;
+
+        if (deliveries[i].distance < shortest) shortest = deliveries[i].distance;
+        if (deliveries[i].distance > longest) longest = deliveries[i].distance;
+    }
