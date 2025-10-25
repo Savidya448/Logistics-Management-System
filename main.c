@@ -211,14 +211,29 @@ int main() {
         scanf("%d", &choice);
 
         switch (choice) {
-            case 1: addCity(); break;
-            case 2: listCities(); break;
-            case 3: inputDistance(); break;
-            case 4: printDistanceTable(); break;
-            case 5: handleDelivery(); break;
-            case 6: showReports(); break;
-            case 0: printf("Goodbye!\n"); exit(0);
-            default: printf("Invalid choice!\n");
+            case 1:
+                addCity();
+                break;
+            case 2:
+                listCities();
+                break;
+            case 3:
+                inputDistance();
+                break;
+            case 4:
+                 printDistanceTable();
+                 break;
+            case 5:
+                handleDelivery();
+                break;
+            case 6:
+                showReports();
+                break;
+            case 0:
+                printf("Goodbye!\n");
+                exit(0);
+            default:
+                printf("Invalid choice!\n");
         }
     }
 
