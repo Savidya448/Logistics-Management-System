@@ -40,3 +40,9 @@ Vehicle vehicles[VEHICLE_COUNT] = {
 
 Delivery deliveries[MAX_DELIVERIES];
 int deliveryCount = 0;
+void addCity();
+void listCities();
+void inputDistance();
+void printDistanceTable();
+void handleDelivery();
+void showReports();
