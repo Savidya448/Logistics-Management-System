@@ -46,3 +46,16 @@ void inputDistance();
 void printDistanceTable();
 void handleDelivery();
 void showReports();
+
+void addCity() {
+    if (cityCount >= MAX_CITIES) {
+        printf("City limit reached!\n");
+        return;
+    }
+    printf("Enter city name: ");
+    scanf("%s", cities[cityCount].name);
+    cityCount++;
+    printf("City added successfully!\n");
+}
+
+
