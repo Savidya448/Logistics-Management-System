@@ -27,3 +27,16 @@ typedef struct {
     float distance;
     float baseCost, fuelUsed, fuelCost, totalCost, profit, customerCharge, time;
 } Delivery;
+City cities[MAX_CITIES];
+int cityCount = 0;
+
+int distances[MAX_CITIES][MAX_CITIES];
+
+Vehicle vehicles[VEHICLE_COUNT] = {
+    {"Van", 1000, 30, 60, 12},
+    {"Truck", 5000, 40, 50, 6},
+    {"Lorry", 10000, 45, 40, 4}
+};
+
+Delivery deliveries[MAX_DELIVERIES];
+int deliveryCount = 0;
