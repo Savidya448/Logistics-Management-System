@@ -100,3 +100,27 @@ void printDistanceTable() {
         printf("\n");
     }
 }
+void handleDelivery() {
+    listCities();
+    int src, dest;
+    float weight;
+    int vehicleType;
+
+    printf("Enter source index: ");
+    scanf("%d", &src);
+    printf("Enter destination index: ");
+    scanf("%d", &dest);
+
+    if (src == dest) {
+        printf("Source and destination cannot be same!\n");
+        return;
+    }
+
+    int dist = distances[src][dest];
+    if (dist == 0) {
+        printf("No distance recorded between these cities.\n");
+        return;
+    }
+
+    printf("Enter weight (kg): ");
+    scanf("%f", &weight);
