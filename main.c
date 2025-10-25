@@ -66,5 +66,23 @@ void listCities() {
         printf("%d. %s\n", i, cities[i].name);
     }
 }
+void inputDistance() {
+    listCities();
+    int src, dest;
+    printf("Enter source city index: ");
+    scanf("%d", &src);
+    printf("Enter destination city index: ");
+    scanf("%d", &dest);
 
+    if (src == dest) {
+        printf("Distance to itself is always 0.\n");
+        return;
+    }
 
+    int d;
+    printf("Enter distance in km: ");
+    scanf("%d", &d);
+    distances[src][dest] = d;
+    distances[dest][src] = d; // symmetric
+    printf("Distance updated!\n");
+}
