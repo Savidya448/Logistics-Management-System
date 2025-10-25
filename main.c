@@ -154,3 +154,17 @@ printf("Select vehicle:\n");
                   baseCost, fuelUsed, fuelCost, totalCost,
                   profit, charge, time};
     deliveries[deliveryCount++] = d;
+ printf("\n===== DELIVERY ESTIMATE =====\n");
+    printf("From: %s\n", cities[src].name);
+    printf("To: %s\n", cities[dest].name);
+    printf("Vehicle: %s\n", v.name);
+    printf("Distance: %.2f km\n", (float)dist);
+    printf("Base Cost: %.2f LKR\n", baseCost);
+    printf("Fuel Used: %.2f L\n", fuelUsed);
+    printf("Fuel Cost: %.2f LKR\n", fuelCost);
+    printf("Operational Cost: %.2f LKR\n", totalCost);
+    printf("Profit: %.2f LKR\n", profit);
+    printf("Customer Charge: %.2f LKR\n", charge);
+    printf("Estimated Time: %.2f hrs\n", time);
+}
+
