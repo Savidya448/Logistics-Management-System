@@ -195,3 +195,32 @@ printf("\n===== PERFORMANCE REPORT =====\n");
     printf("Longest Route: %.2f km\n", longest);
     printf("Shortest Route: %.2f km\n", shortest);
 }
+int main() {
+    int choice;
+
+    while (1) {
+        printf("\n===== Logistics Management Menu =====\n");
+        printf("1. Add City\n");
+        printf("2. List Cities\n");
+        printf("3. Add Distance\n");
+        printf("4. Show Distance Table\n");
+        printf("5. New Delivery\n");
+        printf("6. Show Reports\n");
+        printf("0. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1: addCity(); break;
+            case 2: listCities(); break;
+            case 3: inputDistance(); break;
+            case 4: printDistanceTable(); break;
+            case 5: handleDelivery(); break;
+            case 6: showReports(); break;
+            case 0: printf("Goodbye!\n"); exit(0);
+            default: printf("Invalid choice!\n");
+        }
+    }
+
+    return 0;
+}
