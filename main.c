@@ -124,3 +124,33 @@ void handleDelivery() {
 
     printf("Enter weight (kg): ");
     scanf("%f", &weight);
+printf("Select vehicle:\n");
+    for (int i = 0; i < VEHICLE_COUNT; i++) {
+        printf("%d. %s (Capacity: %d kg)\n", i + 1, vehicles[i].name, vehicles[i].capacity);
+    }
+    scanf("%d", &vehicleType);
+    vehicleType--;
+
+    if (vehicleType < 0 || vehicleType >= VEHICLE_COUNT) {
+        printf("Invalid vehicle type.\n");
+        return;
+    }
+
+    if (weight > vehicles[vehicleType].capacity) {
+        printf("Weight exceeds vehicle capacity!\n");
+        return;
+    }
+
+    Vehicle v = vehicles[vehicleType];
+    float baseCost = dist * v.ratePerKm * (1 + weight / 10000.0);
+    float fuelUsed = dist / v.efficiency;
+    float fuelCost = fuelUsed * FUEL_PRICE;
+    float totalCost = baseCost + fuelCost;
+    float profit = baseCost * 0.25;
+    float charge = totalCost + profit;
+    float time = dist / v.speed;
+
+    Delivery d = {src, dest, weight, vehicleType, dist,
+                  baseCost, fuelUsed, fuelCost, totalCost,
+                  profit, charge, time};
+    deliveries[deliveryCount++] = d;
