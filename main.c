@@ -86,3 +86,17 @@ void inputDistance() {
     distances[dest][src] = d; // symmetric
     printf("Distance updated!\n");
 }
+void printDistanceTable() {
+    printf("     ");
+    for (int i = 0; i < cityCount; i++)
+        printf("%10s", cities[i].name);
+    printf("\n");
+
+    for (int i = 0; i < cityCount; i++) {
+        printf("%-5s", cities[i].name);
+        for (int j = 0; j < cityCount; j++) {
+            printf("%10d", distances[i][j]);
+        }
+        printf("\n");
+    }
+}
