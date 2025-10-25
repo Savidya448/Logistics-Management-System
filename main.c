@@ -186,3 +186,12 @@ void showReports() {
         if (deliveries[i].distance < shortest) shortest = deliveries[i].distance;
         if (deliveries[i].distance > longest) longest = deliveries[i].distance;
     }
+printf("\n===== PERFORMANCE REPORT =====\n");
+    printf("Total Deliveries: %d\n", deliveryCount);
+    printf("Total Distance Covered: %.2f km\n", totalDistance);
+    printf("Average Delivery Time: %.2f hours\n", totalTime / deliveryCount);
+    printf("Total Revenue: %.2f LKR\n", totalRevenue);
+    printf("Total Profit: %.2f LKR\n", totalProfit);
+    printf("Longest Route: %.2f km\n", longest);
+    printf("Shortest Route: %.2f km\n", shortest);
+}
